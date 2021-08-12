@@ -6,7 +6,7 @@ This workflow will utilize the Evaluation queue on Synapse to run [MAGeCK compar
 To use this workflow as part of a Synapse Evaluation queue, first copy the link address to the zipped archive of this repository:
 
 ```
-https://github.com/Sage-Bionetworks-Workflows/dockstore-workflow-mageck
+https://github.com/Sage-Bionetworks-Challenges/mageck-submissions/archive/refs/heads/main.zip
 ```
 
 Then, go to [Synapse](https://www.synapse.org/) and create a new File Link in the respective Synaspe Project.  Paste the link above under **URL**, and name it whatever you like, e.g. `workflow`.
