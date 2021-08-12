@@ -24,31 +24,31 @@ cwl-runner workflow.cwl inputs.yaml
 
 where `inputs.yaml` is a YAML file with 5 values:
 
-* submission_id - Submission ID
-* synapse_config - filepath to .synapseConfig file
-* admin_folder_id - Synapse Folder ID accessible by an admin
-* submitter_folder_id - Synapse Folder ID accessible by the submitter
-* workflow_id - Synapse ID that links to the workflow archive
+* submissionId - Submission ID
+* synapseConfig - filepath to .synapseConfig file
+* adminUploadSynId - Synapse Folder ID accessible by an admin
+* submitterUploadSynId - Synapse Folder ID accessible by the submitter
+* workflowSynapseId - Synapse ID that links to the workflow archive
 
 For example:
 
 ```yaml
-submission_id: 1234567
-synapse_config:
+submissionId: 1234567
+synapseConfig:
   class: File
   path: /Users/awesome-user/.synapseConfig
-admin_folder_id: syn123
-submitter_folder_id: syn345
-workflow_id: syn678
+adminUploadSynId: syn123
+submitterUploadSynId: syn345
+workflowSynapseId: syn678
 ```
 
 Alternatively, all inputs can be passed from the command-line, e.g.
 
 ```bash
 cwl-runner workflow.cwl \
-  --submission_id 1234567 \
-  --synapse_config /Users/awesome-user/.synapseConfig \
-  --admin_folder_id syn123 \
-  --submitter_folder_id syn456 \
-  --workflow_id: syn678
+  --submissionId 1234567 \
+  --synapseConfig /Users/awesome-user/.synapseConfig \
+  --adminUploadSynId syn123 \
+  --submitterUploadSynId syn456 \
+  --workflowSynapseId: syn678
 ```

@@ -22,11 +22,11 @@ requirements:
   - class: SubworkflowFeatureRequirement
 
 inputs:
-  submission_id: int
-  synapse_config: File
-  admin_folder_id: string
-  submitter_folder_id: string
-  workflow_id: string
+  submissionId: int
+  synapseConfig: File
+  adminUploadSynId: string
+  submitterUploadSynId: string
+  workflowSynapseId: string
 
 outputs: {}
 
@@ -35,9 +35,9 @@ steps:
     run: steps/download_yaml.cwl
     in:
       - id: submission_id
-        source: "#submission_id"
+        source: "#submissionId"
       - id: synapse_config
-        source: "#synapse_config"
+        source: "#synapseConfig"
     out:
       - id: filepath
 
@@ -56,7 +56,7 @@ steps:
       https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-workflow-mageck/master/mageck_synapse_scatter.cwl
     in:
       - id: synapse_config
-        source: "#synapse_config"
+        source: "#synapseConfig"
       - id: library_fileview
         source: "#get_yaml_inputs/library_fileview"
       - id: output_parent_synapse_id
