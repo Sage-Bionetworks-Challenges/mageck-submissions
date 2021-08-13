@@ -31,20 +31,33 @@ outputs:
       loadContents: true
       outputEval: $(JSON.parse(self[0].contents)['output_parent_synapse_id'])
 
-  - id: comparisons
-    type: 
-      type: array
-      items: 
-        type: record
-        fields:
-          comparison_name: string
-          library_name: string
-          treatment_synapse_ids: string[]
-          control_synapse_ids: string[]
+  - id: comparison_name
+    type: string
     outputBinding:
       glob: results.json
       loadContents: true
-      outputEval: $(JSON.parse(self[0].contents)['comparisons'])
+      outputEval: $(JSON.parse(self[0].contents)['comparison_name'])
+
+  - id: library_name
+    type: string
+    outputBinding:
+      glob: results.json
+      loadContents: true
+      outputEval: $(JSON.parse(self[0].contents)['library_name'])
+
+  - id: treatment_synapse_ids
+    type: string[]
+    outputBinding:
+      glob: results.json
+      loadContents: true
+      outputEval: $(JSON.parse(self[0].contents)['treatment_synapse_ids'])
+
+  - id: control_synapse_ids
+    type: string[]
+    outputBinding:
+      glob: results.json
+      loadContents: true
+      outputEval: $(JSON.parse(self[0].contents)['control_synapse_ids'])
 
 baseCommand: yaml2json.py
 arguments:
